@@ -17,10 +17,16 @@
 
      <!--    Content -->
     <div class="page__content__questions">
-        <input name="FieldsIsEmpty" type="hidden" id="FieldsIsEmpty" value="{% trans 'Заполните полностью все поля' %}" />
-        <input name="TimesUp" type="hidden" id="TimesUp" value="{% trans 'Последний вопрос был недавно отправлен, попробуйте отправить свой через 10 минут' %}" />
-        <input name="ConfirmSend" type="hidden" id="ConfirmSend" value="{% trans 'Вы точно хотите отправить вопрос?' %}" />
-        <input name="SentSuccessfully" type="hidden" id="SentSuccessfully" value="{% trans 'Вопрос успешно отправлен, он отобразится в списке тогда, когда получит ответ' %}" />
+        <input type="hidden" id="FieldsIsEmpty"
+               value="{% trans 'Заполните полностью все поля' %}" />
+        <input type="hidden" id="RecaptchaIsEmpty"
+               value="{% trans 'Заполните Recaptcha' %}" />
+        <input  type="hidden" id="TimesUp"
+                value="{% trans 'Последний вопрос был недавно отправлен, попробуйте отправить свой через 10 минут' %}" />
+        <input  type="hidden" id="ConfirmSend"
+                value="{% trans 'Вы точно хотите отправить вопрос?' %}" />
+        <input  type="hidden" id="SentSuccessfully"
+                value="{% trans 'Вопрос успешно отправлен, он отобразится в списке тогда, когда получит ответ' %}" />
 
         <div class="page__content__questions__header">
             <button type="button" class="btn" id="QuestionButton">{% trans 'Задать вопрос' %}</button>

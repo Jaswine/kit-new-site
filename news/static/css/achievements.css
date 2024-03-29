@@ -78,3 +78,22 @@
     margin-bottom: 2%;
     margin-top: 2%;
 }
+
+@media screen and (max-width: 1068px) {
+    .page {
+        padding-bottom: 15vh
+    }
+    .page__parthers {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .pagination {
+        margin-top: 3vh
+    }
+}
+@media screen and (max-width: 668px) {
+    .page__parthers {
+        grid-template-columns: 1fr;
+        gap: 0;
+        row-gap: 0;
+    }
+}

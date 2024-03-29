@@ -290,6 +290,7 @@ option:focus, option:checked, option:hover, option: {
     .dormitory__video {
         width: 100%;
         height: 100%;
+        max-width: 100%
     }
     .dormitory__documents__form {
         max-width: 96vw;

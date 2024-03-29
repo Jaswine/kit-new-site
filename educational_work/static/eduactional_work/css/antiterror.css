@@ -12,6 +12,9 @@
 }
 
 @media screen and (max-width: 768px){
+    h1 {
+        font-size: calc((1vw + 1vh) * 2.6);
+    }
     .video-block video{
         width: 100% ;
         height: 40vh;

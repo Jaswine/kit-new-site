@@ -21,10 +21,17 @@ def question_create(request):
                     "message": "Question created successfully"
                 }, status=201)
 
-            return JsonResponse({
-                "status": "error",
-                "message": "Error creating question"
-            }, status=400)
+            if isinstance(form.errors, dict):
+                if form.errors.get('recaptcha'):
+                    return JsonResponse({
+                        "status": "error",
+                        "message": f"Recaptcha: {form.errors.get('recaptcha')[0]}"
+                    }, status=400)
+                else:
+                    return JsonResponse({
+                        "status": "error",
+                        "message": form.errors.get('question')[0]
+                    }, status=400)
 
         return JsonResponse({
             "status": "error",

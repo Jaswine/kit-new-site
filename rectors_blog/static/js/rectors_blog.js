@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
         })
 
         if (!send_status) {
-            alert(dcs('#FieldsIsEmpty').value)
+            createMessage(dcs('#FieldsIsEmpty').value)
             return ''
         }
 
@@ -39,12 +39,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 .then(data => {
                     if (data.status == 'success') {
                         form.style.display = "none"
-                        alert(dcs('#SentSuccessfully').value)
+                        createMessage(dcs('#SentSuccessfully').value)
                     } else {
-                        if (data.message == 'Error creating question') {
-                            alert(dcs('#FieldsIsEmpty').value)
-                        } else if (data.message == 'You can only submit a question once every half hour.') {
-                            alert(dcs('#TimesUp').value)
+                        console.log('Error', data)
+                        if (data.message == 'You can only submit a question once every half hour.') {
+                            createMessage(dcs('#TimesUp').value)
+                        } else {
+                            createMessage(data.message)
                         }
                     }
                 })
@@ -52,6 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
     })
 
     const question_list = document.querySelectorAll('.question')
+
     question_list.forEach((question) => {
         let btn_open = question.querySelector('.question__footer__open')
         let btn_close = question.querySelector('.question__footer__close')
@@ -61,6 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
             answer.style.display = "flex";
             btn_open.style.display = "none";
             btn_close.style.display = "block";
+
 
             setTimeout(() => {
                 answer.style.opacity = 1
@@ -78,4 +81,19 @@ document.addEventListener('DOMContentLoaded', () => {
         })
     })
 
+    function createMessage( message ) {
+        const div = document.createElement("div")
+        div.classList.add("notification")
+        div.innerHTML = message
+
+        document.body.appendChild(div)
+
+        setTimeout(() => {
+            div.style.opacity = 0
+        }, 4000)
+
+         setTimeout(() => {
+            document.body.removeChild(div)
+        }, 4300)
+    }
 })

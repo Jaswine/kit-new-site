@@ -1,4 +1,4 @@
-from django.forms import ModelForm
+from django.forms import ModelForm, ValidationError
 from .models import RectorsBlogQuestionAnswerModel
 from django_recaptcha.fields import ReCaptchaField
 from django.conf import settings

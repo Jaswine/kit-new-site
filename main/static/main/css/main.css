@@ -328,6 +328,7 @@ nav {
     nav .nav__right {
         gap: 0;
         max-width: 100%;
+        overflow-y: auto;
     }
     .nav__link {
         width: 100%;

@@ -47,3 +47,9 @@
 .vacancy p {
     margin-bottom: 4px;
 }
+
+@media screen and (max-width: 768px) {
+    .page__announcements__vacancies {
+        max-width: 100%;
+    }
+}
