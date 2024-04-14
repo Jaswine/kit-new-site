@@ -18,6 +18,7 @@
     grid-template-columns: repeat(3, 1fr);
     width: 100%;
     gap: 2%;
+    margin-bottom: 24vh
 }
 .parthner {
     display: flex;
